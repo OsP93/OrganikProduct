@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <!-- NO index 
+    <meta name="robots" content="noindex, nofollow" />
+     alt no index
+    <meta name="robots" content="none" />
+     no cache 
+    <meta http-equiv="Cache-Control" content="no-cache" />
+     -------- -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts & icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Organik Produkt</title>
+</head>
+
+<body>
+
+    <!-- navigation -->
+    <div class="navigation">
+        <div class="navigation__large">
+            <div class="navigation-logo">
+                <img src="img/organic_produkt__logo.jpg" alt="logo" class="navigation-logo__img">
+                <p class="navigation-logo__text">ОРГАНІК <br> ПРОДУКТ</p>
+            </div>
+            <nav class="navigation-navbar">
+                <a href="#header" class="navigation-navbar__pill active">головна</a>
+                <a href="#about" class="navigation-navbar__pill">про нас</a>
+                <a href="#products" class="navigation-navbar__pill">продукція</a>
+                <a href="#contacts" class="navigation-navbar__pill">контакти</a>
+            </nav>
+        </div>
+    </div>
+    <!-- mobile navagation -->
+    <div class="navigation__burger">
+        <div class="navigation-logo">
+            <img src="img/organic_produkt__logo.jpg" alt="logo" class="navigation-logo__img">
+            <p class="navigation-logo__text">ОРГАНІК <br> ПРОДУКТ</p>
+        </div>
+        <div class="navigation__burgerpill">
+            <img class="burgerpill" src="img\other\burger_menu_icon.svg" alt="mobile_menu">
+            <img class="burgerpill-cross hiden" src="img\other\burger_menu_exit_icon.svg" alt="mobile_menu_exit">
+        </div>
+        <div class="navigation__burger-navbar hiden">
+            <a href="index.html" class="navigation-navbar__mobile-pill">головна</a>
+            <a href="about_us.html" class="navigation-navbar__mobile-pill">про нас</a>
+            <a href="shop.html" class="navigation-navbar__mobile-pill">продукція</a>
+            <a href="contacts.html" class="navigation-navbar__mobile-pill">контакти</a>
+        </div>
+    </div>
+    <div class="wraper">
+        <div class="emty-space"></div>
+        <div class="main-content">
+            <div class="main-content__colum">
+                <!-- contacts -->
+                <section id="contacts">
+                    <div class="contacts">
+                        <div class="contacts-header">
+                            <h2 class="contacts-header__header">Контакти</h2>
+                            <a href="about_us.html" class="contacts-header__link links">Більше &gt;</a>
+                        </div>
+                        <div class="contacts-description">
+                            <p class="contacts-description__tel">Tel1: <a href="tel:+380000000000">+38 (000) 000 00
+                                    00</a></p>
+                            <p class="contacts-description__tel">Tel2: <a href="tel:+380000000000">+38 (000) 000 00
+                                    00</a></p>
+                            <p class="contacts-description__mail">Mail: <a
+                                    href="mailto:exemple@mail.com">exemple@mail.com</a>
+                            </p>
+                            <p class="contacts-description__address">Address: Lorem ipsum dolor, <br>sit amet
+                                consectetur
+                                adipisicing elit.
+                                <br>sit amet consectetur
+                                adipisicing elit.
+                            </p>
+                            <div class="contacts-description__socialbar">
+                                <a href="#" class="sociallinks inst"><img src="img/social/instagram_icon.svg"
+                                        alt="instagram"></a>
+                                <a href="#" class="sociallinks fb"><img src="img/social/facebook_icon.svg"
+                                        alt="facebook"></a>
+                                <a href="#" class="sociallinks twit"><img src="img/social/twitter_icon.svg"
+                                        alt="twitter"></a>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <h3 class="contact-form__header">Маєте питання?</h3>
+                            <h4 class="contact-form__description">заповніть форму і ми зв'яжимось з вами</h4>
+                            <form>
+                                <input type="text" class="form__name" placeholder="Ім'я">
+                                <input type="email" class="form__mail" placeholder="Ел. пошта">
+                                <input type="text" class="form__phone" placeholder="Телефон">
+                                <input type="text" class="form__subject" placeholder="Повідомлення">
+                            </form>
+                            <button class="contact-form__button">надіслати</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <section id="footer">
+        <footer id="footerblock">
+            <div class="footer">
+                <div class="footer-content">
+                    <p class="footer-content__text">Organic Product | © 2022</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="sliders.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
