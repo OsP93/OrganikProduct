@@ -53,6 +53,9 @@ fetch(endPoint)
         basketPils.forEach((basketPil) => basketPil.addEventListener('click', function () { // Прослуховувач на кожну кнопку "корзина"
             console.log('Basket button is clicked!');
             console.log(json[basketPil.dataset.id]['c'][1]['v']);
+            // Вибираємо елемент корзину якого був клік
+            let getClickElem = document.querySelector('.basketPil.dataset.id');
+            console.log(getClickElem);
 
 
             productsInBasket.push(basketPil.dataset.id);
