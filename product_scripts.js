@@ -40,7 +40,9 @@ fetch(endPoint)
                         <a href="" id="productID_${json[i]['c'][0]['v']}" class="product-description__link links">детальніше &gt;</a>
                     </div>
                     <div class="product-buttons">
-                        <button class="product-buttons__basket" data-id="${json[i]['c'][0]['v']}"><i class="material-icons basket-icon">shopping_basket</i><i class='material-icons check-icon hiden'>check_circle_outline</span></i></button>
+                        <button class="product-buttons__basket" data-id="${json[i]['c'][0]['v']}">
+                        <i class="material-icons basket-icon">shopping_basket</i>
+                        <i class="material-icons check-icon hiden">check_circle_outline</i></button>
                     </div>
                 </div>
             </div>`;
@@ -53,9 +55,13 @@ fetch(endPoint)
         basketPils.forEach((basketPil) => basketPil.addEventListener('click', function () { // Прослуховувач на кожну кнопку "корзина"
             console.log('Basket button is clicked!');
             console.log(json[basketPil.dataset.id]['c'][1]['v']);
-            // Вибираємо елемент корзину якого був клік
-            let getClickElem = document.querySelector('.basketPil.dataset.id');
-            console.log(getClickElem);
+            // Вибираємо елемент корзину якого був клік (делегування)
+            productlist.onclick = function (event) {
+                let target = event.target; // де був клік?
+                //console.log(target.classList);
+                if (target.classList != 'product-buttons__basket') return; // Якщо клік був не на кнопці "корзина", то ігноруємо
+                changeButton(target); // Якщо клік був на кнопці "корзина", то змінюємо іконку
+            }
 
 
             productsInBasket.push(basketPil.dataset.id);
