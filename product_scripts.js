@@ -67,7 +67,7 @@ fetch(endPoint)
             }*/
             productlist.onclick = function(event){
                 let target = event.target.closest('product-buttons__basket'); // Визначаємо де був клік і шукаємо найблищого предка об'єкта де був клік згідно запиту ('product-buttons__basket').
-                if (!product-buttons__basket)return;
+                if (!'.product-buttons__basket')return;
                 console.log("YES!!!")
 
             }
