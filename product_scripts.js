@@ -56,6 +56,7 @@ fetch(endPoint)
             console.log('Basket button is clicked!');
             console.log(json[basketPil.dataset.id]['c'][1]['v']);
             // Вибираємо елемент на корзину якого був клік (делегування)
+            // Залишимо функціонал на кращі часи
             /*productlist.onclick = function (event) {
                 let target = event.target; // де був клік?
                 //console.log(target.classList);
@@ -64,18 +65,18 @@ fetch(endPoint)
                 function changeButton(arg){
                     
                 }
-            }*/
+            }
             productlist.onclick = function(event){
                 let target = event.target.closest('product-buttons__basket'); // Визначаємо де був клік і шукаємо найблищого предка об'єкта де був клік згідно запиту ('product-buttons__basket').
                 if (!'.product-buttons__basket')return;
                 console.log("YES!!!")
 
-            }
-
-
+            }*/
             productsInBasket.push(basketPil.dataset.id);
             localStorage.setItem('BASKET', productsInBasket);
             console.log(productsInBasket);
+            // Відмальовування корзини
+            
         }));
     });
 
