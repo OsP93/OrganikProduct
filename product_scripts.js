@@ -76,7 +76,8 @@ fetch(endPoint)
             localStorage.setItem('BASKET', productsInBasket);
             console.log(productsInBasket);
             // Відмальовування корзини
-            
+
+
         }));
     });
 

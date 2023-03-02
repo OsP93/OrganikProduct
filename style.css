@@ -678,6 +678,23 @@ body {
     transition: 0.3s;
 }
 
+/* basket */
+.basket-fild {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    padding: 3vw;
+    background: rgb(255, 255, 255, 0.9);
+    z-index: 500;
+}
+
+.basket-fild__shoppinglist {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
 /* footer */
 .footer {
     color: #fff;
