@@ -15,6 +15,9 @@
     <!-- fonts & icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <title>Organik Produkt</title>
 </head>
@@ -188,6 +191,12 @@
                 </section>
                 <div class="emty-space"></div>
 
+                <!--Shopping cart-->
+                <button class="shoppingcart__button">
+                    <i class="material-symbols-outlined">shopping_cart</i>
+                </button>
+
+
                 <!-- contacts -->
                 <section id="contacts">
                     <div class="contacts">
@@ -232,31 +241,32 @@
                 </section>
 
                 <!-- basket -->
-                <div class="basket-fild">
+                <div class="basket-fild hiden">
                     <div class="basket-fild__shoppinglist">
-
+                        <div class="basket-fild__shoppingbuttons">
+                            <button class="clearbutton">Очистити</button>
+                            <button class="exitbutton">Закрити</button>
+                        </div>
+                        <div class="basket-fild__purchases">
+                            <div class="purchasesunit">
+                                <img src="" alt="" class="purchases__img">
+                                <div class="purchases__title"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="basket-fild__shoppingbuttons">
-                        <button class="clearbutton">Очистити</button>
-                        <button class="exitbutton">Закрити</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- footer -->
-    <section id="footer">
-        <footer id="footerblock">
-            <div class="footer">
-                <div class="footer-content">
-                    <p class="footer-content__text">Organic Product | © 2022</p>
-                </div>
-            </div>
-        </footer>
-    </section>
-    <script src="sliders.js"></script>
-    <script src="product_scripts.js"></script>
-    <script src="mobile_menu.js"></script>
+                    <!-- footer -->
+                    <section id="footer">
+                        <footer id="footerblock">
+                            <div class="footer">
+                                <div class="footer-content">
+                                    <p class="footer-content__text">Organic Product | © 2022</p>
+                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                    <script src="sliders.js"></script>
+                    <script src="product_scripts.js"></script>
+                    <script src="mobile_menu.js"></script>
 </body>
 
 </html>

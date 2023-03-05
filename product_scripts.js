@@ -24,7 +24,7 @@ fetch(endPoint)
             correctData = correctData.substring(1); // обрізаємо перший символ якщо він ":"
         }
         const json = JSON.parse(correctData); // конвертуємо в JSON
-        console.log(json);
+        //console.log(json);
         // Rendering products list / формуємо список продукції
         for (let i = 0; i < 6; i++) {
             productlist.innerHTML += `
