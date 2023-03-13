@@ -714,9 +714,8 @@ body {
 }
 
 .shoppingcart__button {
-    width: 50px;
-    height: 50px;
-    font-size: 3em;
+    width: 9vh;
+    height: 9vh;
     text-align: center;
     background: #2C6F0E;
     color: #fff;
@@ -724,6 +723,10 @@ body {
     position: fixed;
     left: 90%;
     top: 90%;
+}
+
+.shoppingcart__button i {
+    font-size: 6vh;
 }
 
 /* footer */
