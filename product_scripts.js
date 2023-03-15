@@ -4,7 +4,7 @@ console.log('Hello! The product JS file is connected.');
 const productlist = document.querySelector('.productlist');
 
 const productsInBasket = []; // Массив id товарів що є в корзині (зберігаеться в lacalStorage)
-const shoppingCart = document.getElementById('shopingcart');
+const shoppingCart = document.getElementById('basketfild');
 // --- Google sheet to JSON --- Конвертація таблиці в JSON
 const url = 'https://docs.google.com/spreadsheets/d/'; // Загальна адреса таблиць гугл
 const sheetId = '1Xz2dXYmAuDDYaR0yLkGsJVGX0TeLFxDKFAbaPNQ53Yo'; // Ідентифікатор таблиці
