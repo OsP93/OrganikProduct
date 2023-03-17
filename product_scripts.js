@@ -1,16 +1,19 @@
 // --- Check initialization --- Перевірка підключення
 console.log('Hello! The product JS file is connected.');
 
+// --- Постійні змінні
 const productlist = document.querySelector('.productlist');
-
-const productsInBasket = []; // Массив id товарів що є в корзині (зберігаеться в lacalStorage)
+const productsInBasket = []; // Массив id товарів що є в корзині (зберігаеться в localStorage)
 const shoppingCart = document.getElementById('basketfild');
+const shoppingList = document.getElementById('shoppinglist');
+
 // --- Google sheet to JSON --- Конвертація таблиці в JSON
 const url = 'https://docs.google.com/spreadsheets/d/'; // Загальна адреса таблиць гугл
 const sheetId = '1Xz2dXYmAuDDYaR0yLkGsJVGX0TeLFxDKFAbaPNQ53Yo'; // Ідентифікатор таблиці
 const query1 = `/gviz/tq?`; // Parameters google API visualization / Параметри візуалізації Гугл
 const query2 = `&tqx=out:json`; // Додаткові параметри
 const query3 = `&sheet=productlist`; // Select page / Вибір сторінки
+let json;
 // Формуємо кінцеву точку запиту (посилання)
 const endPoint = `${url}${sheetId}${query1}${query2}${query3}`;
 console.log(endPoint);
@@ -23,7 +26,7 @@ fetch(endPoint)
         if (correctData[0] === ':') {
             correctData = correctData.substring(1); // обрізаємо перший символ якщо він ":"
         }
-        const json = JSON.parse(correctData); // конвертуємо в JSON
+        json = JSON.parse(correctData); // конвертуємо в JSON
         //console.log(json);
         // Rendering products list / формуємо список продукції
         for (let i = 0; i < 6; i++) {
@@ -75,23 +78,50 @@ fetch(endPoint)
             productsInBasket.push(basketPil.dataset.id);
             localStorage.setItem('BASKET', productsInBasket);
             console.log(productsInBasket);
-            // Відмальовування корзини
-
-
         }));
     });
 // Shopping card -----Корзина покупок-----
 
 document.getElementById('shoppingcart').addEventListener('click', function () {
     shoppingCart.classList.remove('hiden');
-
-});
-// Exit basket -----Вихід з корзини------
-document.getElementById('closebasket').addEventListener('click', function () {
-    shoppingCart.classList.add('hiden');
-});
-// Clear basket -----Очистка корзини------
-document.getElementById('clearbasket').addEventListener('click', function () {
-    localStorage.clear('BASKET');
+    console.log(productsInBasket.length);
+    // Відмальовування корзини
+    for(i=0; i<productsInBasket.length; i++){
+        shoppingList.innerHTML+=`
+        <div class="basket-fild__purchases">
+            <div class="purchasesunit">
+                <img src="${json[productsInBasket[i]]['c'][2]['v']}" alt="" class="purchases__img">
+                <div class="purchases__title">
+                    <h4 class="purchases__title_name">${json[productsInBasket[i]]['c'][1]['v']}</h4>
+                </div>
+                <div class="purchases__price">
+                    <p class="purchases__price_value">Ціна: ${json[productsInBasket[i]]['c'][5]['v']}  &#8372;</p>
+                </div>
+                <div class="purchases__quantity">
+                    <p class="quantity-title">Кількість: <button id="plusBtn">+</button><span class="quantity"> 1 </span>
+                    <button id="minusBtn">-</button></p>
+                </div>
+            </div>
+        </div>`;
+    };
+    
+    // Exit basket -----Вихід з корзини------ (з тимчасовою очисткою)
+    document.getElementById('closebasket').addEventListener('click', function () {
+        shoppingCart.classList.add('hiden');
+        console.log('click exit');
+        let purchases = document.querySelectorAll('.basket-fild__purchases');
+        purchases.forEach(function(elem){
+            elem.parentNode.removeChild(elem)
+        });
+    });
+    // Clear basket -----Очистка корзини------ (повна)
+    document.getElementById('clearbasket').addEventListener('click', function () {
+        localStorage.clear('BASKET'); // Очистка localStorage
+        let purchases = document.querySelectorAll('.basket-fild__purchases');
+        purchases.forEach(function(elem){
+            elem.parentNode.removeChild(elem)
+        });
+        console.log('click remove');
+    });
 });
 
